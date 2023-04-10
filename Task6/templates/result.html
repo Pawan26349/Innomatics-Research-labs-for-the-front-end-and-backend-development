@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body bgcolor="lightblue">
+    <style>
+        .container{
+            width: 100%;
+            height: 100px;
+            background-color: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 20px 20px ;
+
+        }
+        .container2{
+            letter-spacing: 30px;
+            text-transform: uppercase;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 30px;
+            color: rgb(206, 212, 217);
+        }
+        .container3{
+            width: 100%;
+            height: 300px;
+            background-color: rgb(134, 233, 134);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 20px 20px ;
+        }
+        .container3 textarea{
+            size: 20px;
+            font-size: 20px;
+            -webkit-text-stroke-width: 2px solid blue;
+        }
+    </style>
+    <div class="container">
+        <div class="container2">
+            <h1>strings Matched</h1>
+        </div>
+    </div>
+    <div class="container3">
+        <textarea name="text" id="" cols="70" rows="10" placeholder="the text is written here">
+            {% for value in result %}
+            {{value}}
+            {% endfor %}
+        </textarea>
+    </div>
+
+</body>
+</html>

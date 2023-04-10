@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra&family=Kalam:wght@700&family=Pacifico&family=Permanent+Marker&family=Ubuntu&display=swap" rel="stylesheet">
+    <title>History</title>
+</head>
+<body>
+    <style>
+        table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        }
+
+        td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        }
+
+        tr:nth-child(even) {
+        background-color: #dddddd;
+        }
+
+        .arrangement{
+            display: flex;
+            flex-direction: row;
+        }
+    </style>
+
+    <!-- ################################################## -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url_for('short_url')}}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('history')}}">History</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+
+    <div>
+        <div>
+            <h1>The History of the URL are : </h1>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <th>OLD URL</th>
+                    <th>SHORTEN URL</th>
+                    <th>Copy from here</th>
+                </tr>
+                {% for i,j in s1%}
+                <tr>
+                    <td>{{i}}</td>
+                    <td>{{j}}</td>
+                    <td><button class="btn btn-outline-secondary" type="submit" id="button-addon2" onclick="myFunction()">Copy url</button></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function myFunction() {
+          // Get the text field
+          var copyText = document.getElementById("myInput");
+        
+          // Select the text field
+          copyText.select();
+          copyText.setSelectionRange(0, 99999); // For mobile devices
+        
+          // Copy the text inside the text field
+          navigator.clipboard.writeText(copyText.value);
+          
+          // Alert the copied text
+          alert("Copied the text: " + copyText.value);
+        }
+    </script>
+    
+</body>
+</html>

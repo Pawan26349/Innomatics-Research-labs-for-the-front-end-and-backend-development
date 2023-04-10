@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex101</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Pacifico&family=Permanent+Marker&family=Ubuntu&display=swap" rel="stylesheet">
+    
+    
+</head> 
+<body bgcolor="ivory">
+    <!-- The below code is of css -->
+    <style>
+        .container{
+            background-color:lightblue;
+            border-radius: 10px 10px 10px 10px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            border-style: dotted;
+            border-color: rgb(255, 0, 0);
+        }
+        .container1{
+            font-family: 'Permanent Marker', cursive;
+            font-size: 35px;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            letter-spacing: 5px;
+            -webkit-text-stroke:2px rgb(50, 50, 147);
+        }
+        .container2 input{
+            font-size: larger;
+            width: 80%;
+        }
+        .container3 textarea{
+            padding-top: 0%;
+            font-size: 20px;
+        }
+        .container4{
+            background-color: rgb(2, 238, 255);
+            width: 90%;
+            display: flex;
+            /* align-items: center; */
+            flex-direction: column;
+            padding-left: 30px;
+            border-radius: 10px 10px 10px 10px;
+            border-style: dotted;
+            border-color: blue;
+
+        }
+        p{
+            font-family: 'Kalam', cursive;
+            font-size: 30px;
+            text-transform: uppercase;
+        }
+    </style>
+
+    <!-- ################################################################## -->
+    <!-- The below code is the Html code -->
+    <div class="container">
+        <div class="container1">
+            <h1>Welcome to regex101 !</h1>
+        </div>
+        <div class="container4">
+            <form action="{{url_for('regex')}}" method="post">
+                <div class="container2">
+                    <p>regular expression</p>
+                    <input type="text" placeholder="/ Insert your regular expression here" name="regular_expression">
+                </div>
+                <div class="container3">
+                    <p>Test String</p>
+                    <textarea name="check_text" id="" cols="50" rows="5" placeholder="Insert your test string here "></textarea>
+                </div>
+                <div>
+                    
+                    <input type="submit" value="Check">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

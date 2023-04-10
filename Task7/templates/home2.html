@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous"> -->
+    <title>Note Taking App</title>
+</head>
+<body>  
+
+    <style>
+        .container2{
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            font-size: 40px;
+            font-weight : bold;
+            font-family :'Courier New', Courier, monospace;
+            letter-spacing: 20px;
+            background-color: rgb(210, 210, 168);
+            border-radius: 20px 20px 0px 0px;
+            color: rgb(127, 40, 40);
+        }
+        .container3{
+            width: 100%;
+            height: 200px;
+            background-color: rgb(175, 175, 125);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            border-radius: 0px 0px 20px 20px;
+            
+        }
+        .container3 input{
+            /* font-size: 30px; */
+            /* width: 50%; */
+            /* margin-left: 0px; */
+            /* width: 60%; */
+            font-size: 35px;
+            border-radius: 10px 10px;
+            background-color: rgb(243, 243, 204);
+            
+            
+        }
+        /* .container4{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            padding-top: 80px;
+
+        } */
+        .table{
+            font-size: 20px;
+            background-color: rgb(255, 255, 255);
+            font-family :'Courier New', Courier, monospace;
+            font-weight: 700;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;    
+        }
+        .search input{
+            font-size: large;
+            margin-right: 20px;
+        }
+        .button button{
+            font-size: 30px;
+            opacity: 1;
+            background-color: rgb(186, 151, 151);
+            color: rgb(112, 74, 25);
+            border: 2px solid #541111; /* Green */
+            border-radius: 20px 20px 20px 20px;
+        }
+
+        .button2 button{
+            font-size: 20px;
+            opacity: 1;
+            background-color: rgb(186, 151, 151);
+            color: rgb(112, 74, 25);
+            border: 2px solid #541111; /* Green */
+            border-radius: 20px 20px 20px 20px;
+            margin-right: 20px;
+        }
+
+        .container{
+            width: 100%;
+            background-color: beige;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: capitalize;
+            border-radius: 20px 20px 20px 20px ;
+            height: fit-content;
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .container5{
+            margin-left: 20px;
+        }
+    </style>
+
+    <div class="table">
+        <div>
+            <table  cellpadding="30px">
+                <tr>
+                    <td>Home</td>
+                    <td>Features</td>
+                    <td>About</td>
+                </tr>
+            </table>
+        </div>
+        <div class="search">
+            <input type="text" name="search" placeholder="Search">
+        </div>
+    </div>
+    <div class="container1">
+        <div class="container2">
+            <h1>note Taking App</h1>
+        </div>
+    </div>
+    <form action="{{url_for('home')}}" method="POST">
+        <div class="container3">
+            <div>
+                <input type="text" name="note" placeholder="Enter a note" size="50px">
+            </div>
+            <div class="button">
+                <button>Add Note</button>
+            </div>
+        </div>
+    </form>
+    {% for i in notes %}
+    <form action="{{url_for('deletion')}}" method="post">
+        <div class="container">
+            <div class="container5">
+                <li name = 'name'>{{i}}</li>
+            </div>
+            <div class="button2" >
+                <button>Complete</button>
+            </div>
+        </div>
+    </form>
+    {% endfor %}
+
+</body>
+</html>

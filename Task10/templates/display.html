@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Display
+{% endblock %}
+
+{% block body %}
+    <h1>The list of all the sabjis are : </h1>
+    <li>
+        {% for i in sabjis %}
+            {{i}}
+        {% endfor %}
+    </li>
+{% endblock %}
